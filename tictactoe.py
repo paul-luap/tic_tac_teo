@@ -1,15 +1,25 @@
+#définir le tour du joueur
 
 
 
+def choix_joueur():
+    global joueur_actuel
+    joueur_actuel = input("Veuillez choisir soit une croix (x), soit un rond (O) : ")
+    if joueur_actuel == "x" :
+        print("Vous avez choisi x. Le joueur 2 aura O")
+    elif joueur_actuel == "o" :
+        print("Vous avez choisi o. Le joueur 2 aura x")
+    else:
+        choix_joueur()
+            
 
-
-
+choix_joueur()
 
 
 
 #pour afficher la grille
 
-case_de_la_grille = [" "," "," "," "," "," "," "," "," "]
+case_de_la_grille = ["-","-","-","-","-","-","-","-","-"]
 
 def affich_grille():
     print("\n")
@@ -22,4 +32,10 @@ def affich_grille():
     print("-------------")
     print("\n")
 
-affich_grille()
+
+
+def jouer():
+    while True:
+        affich_grille()
+        x = input()
+jouer()
