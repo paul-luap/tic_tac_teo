@@ -16,6 +16,13 @@ Tour_joueur = chaque joueur choisi un chiffre pour remplir la case correspondant
 # Initialisation de la grille
 case_de_la_grille = ["-","-","-","-","-","-","-","-","-"]
 
+#réinitialisation de la grille à chaque tour
+def renitia_grille():
+    global case_de_la_grille
+    case_de_la_grille = ["-","-","-","-","-","-","-","-","-"]
+
+
+
 # Choix du joueur
 def choix_joueur():
     global joueur_actuel, joueur_adverse
@@ -77,6 +84,7 @@ def tour_joueur(symbole):
 # Fonction principale du jeu
 def jeu():
     choix_joueur()
+    renitia_grille()
     affich_grille()
     global joueur_actuel, joueur_adverse
     while True:
